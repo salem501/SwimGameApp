@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PlayerService.kt</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">projekt1</a> &gt; <a href="index.source.html" class="el_package">service</a> &gt; <span class="el_source">PlayerService.kt</span></div><h1>PlayerService.kt</h1><pre class="source lang-java linenums">package service
+
+import entity.Action
+
+/**
+ * Service layer class that provides the logic for the two possible actions a player
+ * can take in War: drawing from the left stack or drawing from right stack.
+
+ */
+<span class="fc" id="L10">class PlayerService (private val rootService : RootService): AbstractRefreshingService(){</span>
+
+    /**
+     * function for knock action. It sets the last action to [Action.KNOCK]
+     * and calls the nextPlayer function and refreshes the game
+     *
+     */
+    fun knock(){
+<span class="fc" id="L18">        rootService.currentGame!!.players[0].lastAction = Action.KNOCK</span>
+<span class="pc" id="L19">        onAllRefreshables { refreshAfterKnock()}</span>
+<span class="fc" id="L20">    }</span>
+
+    /**
+     * function that swaps the cards in the player's hand and the cards
+     * in the pool and then calls the nextPlayer function and refreshes
+     */
+
+    fun swapAll(){
+
+<span class="fc" id="L29">        val currentGame = rootService.currentGame!!</span>
+
+<span class="fc" id="L31">        currentGame.players[0].lastAction = Action.SWAP_ALL</span>
+
+        //swap line
+<span class="fc" id="L34">        currentGame.players[0].cards = currentGame.poolCards.also {</span>
+<span class="fc" id="L35">                currentGame.poolCards = currentGame.players[0].cards</span>
+<span class="fc" id="L36">            }</span>
+
+<span class="pc" id="L38">        onAllRefreshables { refreshAfterSwap()}</span>
+<span class="fc" id="L39">    }</span>
+    /**
+     * function that swap one card from the player's hand and one
+     * from the pool
+     * @param playerCardIndex the index of the card that the player wants to swap
+     * @param poolCardIndex the index of the card that the player wants to have from the pool
+     * */
+
+    fun swapOne(playerCardIndex:Int, poolCardIndex:Int){
+
+<span class="pc bpc" id="L49" title="4 of 14 branches missed.">        require((playerCardIndex in 0 .. 2) &amp;&amp; (poolCardIndex in 0 .. 2)){</span>
+<span class="fc" id="L50">            &quot;The given indexes are not valid&quot;</span>
+        }
+
+<span class="fc" id="L53">        val currentGame = rootService.currentGame!!</span>
+
+<span class="fc" id="L55">        currentGame.players[0].lastAction = Action.SWAP_ONE</span>
+
+        //swap line
+<span class="fc" id="L58">        currentGame.players[0].cards[playerCardIndex] = currentGame.poolCards[poolCardIndex].also {</span>
+
+<span class="fc" id="L60">            currentGame.poolCards[poolCardIndex] = currentGame.players[0].cards[playerCardIndex]</span>
+
+<span class="fc" id="L62">            }</span>
+
+<span class="pc" id="L64">        onAllRefreshables { refreshAfterSwap()}</span>
+<span class="fc" id="L65">    }</span>
+    /**
+     * function for pass action
+     *
+     * */
+    fun pass(){
+<span class="fc" id="L71">        rootService.currentGame!!.players[0].lastAction = Action.PASS</span>
+<span class="pc" id="L72">        onAllRefreshables { refreshAfterPass()}</span>
+<span class="fc" id="L73">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

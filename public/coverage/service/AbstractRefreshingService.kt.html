@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AbstractRefreshingService.kt</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">projekt1</a> &gt; <a href="index.source.html" class="el_package">service</a> &gt; <span class="el_source">AbstractRefreshingService.kt</span></div><h1>AbstractRefreshingService.kt</h1><pre class="source lang-java linenums">package service
+
+import view.Refreshable
+
+<span class="fc" id="L5">abstract class AbstractRefreshingService {</span>
+<span class="fc" id="L6">    private val refreshables = mutableListOf&lt;Refreshable&gt;()</span>
+
+    fun addRefreshable(newRefreshable : Refreshable) {
+<span class="nc" id="L9">        refreshables += newRefreshable</span>
+<span class="nc" id="L10">    }</span>
+
+    fun onAllRefreshables(method: Refreshable.() -&gt; Unit) =
+<span class="fc" id="L13">        refreshables.forEach {</span>
+<span class="nc" id="L14">            it.method()</span>
+<span class="pc" id="L15">        }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

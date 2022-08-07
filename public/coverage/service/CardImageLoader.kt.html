@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CardImageLoader.kt</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">projekt1</a> &gt; <a href="index.source.html" class="el_package">service</a> &gt; <span class="el_source">CardImageLoader.kt</span></div><h1>CardImageLoader.kt</h1><pre class="source lang-java linenums">package service
+
+import entity.CardSuit
+import entity.CardValue
+import java.awt.image.BufferedImage
+import javax.imageio.ImageIO
+
+private const val CARDS_FILE = &quot;/card_deck.png&quot;
+private const val IMG_HEIGHT = 200
+private const val IMG_WIDTH = 130
+
+/**
+ * Provides access to the src/main/resources/card_deck.png file that contains all card images
+ * in a raster. The returned [BufferedImage] objects of [frontImageFor], [blankImage],
+ * and [backImage] are 130x200 pixels.
+ */
+<span class="fc" id="L17">class CardImageLoader {</span>
+
+    /**
+     * The full raster image containing the suits as rows (plus one special row for blank/back)
+     * and values as columns (starting with the ace). As the ordering does not correctly reflect
+     * the order in which the suits are declared in [CardSuit], mappings via [row] and [column]
+     * are required.
+     */
+<span class="fc" id="L25">    private val image : BufferedImage = ImageIO.read(CardImageLoader::class.java.getResource(CARDS_FILE))</span>
+
+    /**
+     * Provides the card image for the given [CardSuit] and [CardValue]
+     */
+    fun frontImageFor(suit: CardSuit, value: CardValue) =
+<span class="fc" id="L31">        getImageByCoordinates(value.column, suit.row)</span>
+
+    /**
+     * Provides a blank (white) card
+     */
+<span class="fc" id="L36">    val blankImage : BufferedImage get() = getImageByCoordinates(0, 4)</span>
+
+    /**
+     * Provides the back side image of the card deck
+     */
+<span class="fc" id="L41">    val backImage: BufferedImage get() = getImageByCoordinates(2, 4)</span>
+
+    /**
+     * retrieves from the full raster image [image] the corresponding sub-image
+     * for the given column [x] and row [y]
+     *
+     * @param x column in the raster image, starting at 0
+     * @param y row in the raster image, starting at 0
+     *
+     */
+    private fun getImageByCoordinates (x: Int, y: Int) : BufferedImage =
+<span class="fc" id="L52">        image.getSubimage(</span>
+<span class="fc" id="L53">            x * IMG_WIDTH,</span>
+<span class="fc" id="L54">            y * IMG_HEIGHT,</span>
+<span class="fc" id="L55">            IMG_WIDTH,</span>
+<span class="fc" id="L56">            IMG_HEIGHT</span>
+<span class="fc" id="L57">        )</span>
+
+}
+
+/**
+ * As the [CARDS_FILE] does not have the same ordering of suits
+ * as they are in [CardSuit], this extension property provides
+ * a corresponding mapping to be used when addressing the row.
+ *
+ */
+<span class="fc bfc" id="L67" title="All 4 branches covered.">private val CardSuit.row get() = when (this) {</span>
+<span class="fc" id="L68">    CardSuit.CLUBS -&gt; 0</span>
+<span class="fc" id="L69">    CardSuit.DIAMONDS -&gt; 1</span>
+<span class="fc" id="L70">    CardSuit.HEARTS -&gt; 2</span>
+<span class="fc" id="L71">    CardSuit.SPADES -&gt; 3</span>
+<span class="fc" id="L72">}</span>
+
+
+ /**
+ * As the [CARDS_FILE] does not have the same ordering of values
+ * as they are in [CardValue], this extension property provides
+ * a corresponding mapping to be used when addressing the column.
+ */
+<span class="fc bfc" id="L80" title="All 13 branches covered.">private val CardValue.column get() = when (this) {</span>
+<span class="fc" id="L81">    CardValue.ACE -&gt; 0</span>
+<span class="fc" id="L82">    CardValue.TWO -&gt; 1</span>
+<span class="fc" id="L83">    CardValue.THREE -&gt; 2</span>
+<span class="fc" id="L84">    CardValue.FOUR -&gt; 3</span>
+<span class="fc" id="L85">    CardValue.FIVE -&gt; 4</span>
+<span class="fc" id="L86">    CardValue.SIX -&gt; 5</span>
+<span class="fc" id="L87">    CardValue.SEVEN -&gt; 6</span>
+<span class="fc" id="L88">    CardValue.EIGHT -&gt; 7</span>
+<span class="fc" id="L89">    CardValue.NINE -&gt; 8</span>
+<span class="fc" id="L90">    CardValue.TEN -&gt; 9</span>
+<span class="fc" id="L91">    CardValue.JACK -&gt; 10</span>
+<span class="fc" id="L92">    CardValue.QUEEN -&gt; 11</span>
+<span class="fc" id="L93">    CardValue.KING -&gt; 12</span>
+<span class="fc" id="L94">}</span>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CardValue.kt</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">projekt1</a> &gt; <a href="index.source.html" class="el_package">entity</a> &gt; <span class="el_source">CardValue.kt</span></div><h1>CardValue.kt</h1><pre class="source lang-java linenums">package entity
+
+import java.util.*
+
+/**
+ * Enum to distinguish between the 13 possible values in a french-suited card game:
+ * 2-10, Jack, Queen, King, and Ace.
+ *
+ * The values are ordered according to their most common ordering:
+ * 2 &lt; 3 &lt; ... &lt; 10 &lt; Jack &lt; Queen &lt; King &lt; Ace
+ *
+ */
+enum class CardValue {
+<span class="fc" id="L14">    TWO,</span>
+<span class="fc" id="L15">    THREE,</span>
+<span class="fc" id="L16">    FOUR,</span>
+<span class="fc" id="L17">    FIVE,</span>
+<span class="fc" id="L18">    SIX,</span>
+<span class="fc" id="L19">    SEVEN,</span>
+<span class="fc" id="L20">    EIGHT,</span>
+<span class="fc" id="L21">    NINE,</span>
+<span class="fc" id="L22">    TEN,</span>
+<span class="fc" id="L23">    JACK,</span>
+<span class="fc" id="L24">    QUEEN,</span>
+<span class="fc" id="L25">    KING,</span>
+<span class="fc" id="L26">    ACE,</span>
+    ;
+
+    /**
+     * provide a single character to represent this value.
+     * Returns one of: 2/3/4/5/6/7/8/9/10/J/Q/K/A
+     */
+    override fun toString() =
+<span class="nc bnc" id="L34" title="All 13 branches missed.">        when(this) {</span>
+<span class="nc" id="L35">            TWO -&gt; &quot;2&quot;</span>
+<span class="nc" id="L36">            THREE -&gt; &quot;3&quot;</span>
+<span class="nc" id="L37">            FOUR -&gt; &quot;4&quot;</span>
+<span class="nc" id="L38">            FIVE -&gt; &quot;5&quot;</span>
+<span class="nc" id="L39">            SIX -&gt; &quot;6&quot;</span>
+<span class="nc" id="L40">            SEVEN -&gt; &quot;7&quot;</span>
+<span class="nc" id="L41">            EIGHT -&gt; &quot;8&quot;</span>
+<span class="nc" id="L42">            NINE -&gt; &quot;9&quot;</span>
+<span class="nc" id="L43">            TEN -&gt; &quot;10&quot;</span>
+<span class="nc" id="L44">            JACK -&gt; &quot;J&quot;</span>
+<span class="nc" id="L45">            QUEEN -&gt; &quot;Q&quot;</span>
+<span class="nc" id="L46">            KING -&gt; &quot;K&quot;</span>
+<span class="nc" id="L47">            ACE -&gt; &quot;A&quot;</span>
+<span class="nc" id="L48">        }</span>
+
+
+    companion object {
+
+        /**
+         * A set of values for a reduced set of 4x8=32 cards (starting with the 7)
+         */
+        fun shortDeck(): Set&lt;CardValue&gt; {
+<span class="nc" id="L57">            return EnumSet.of(ACE, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING)</span>
+        }
+
+    }
+
+
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

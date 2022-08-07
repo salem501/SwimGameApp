@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>SwimCard.kt</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">projekt1</a> &gt; <a href="index.source.html" class="el_package">entity</a> &gt; <span class="el_source">SwimCard.kt</span></div><h1>SwimCard.kt</h1><pre class="source lang-java linenums">package entity
+
+<span class="fc" id="L3">data class SwimCard (val suit: CardSuit, val value: CardValue) {</span>
+<span class="nc" id="L4">    override fun toString() = &quot;$suit$value&quot;</span>
+
+    public fun valueOf():Float{
+<span class="pc bpc" id="L7" title="8 of 13 branches missed.">        when(this.value){</span>
+<span class="nc" id="L8">            CardValue.TWO -&gt; return 2F;</span>
+<span class="nc" id="L9">            CardValue.THREE -&gt; return 3F;</span>
+<span class="nc" id="L10">            CardValue.FOUR -&gt; return 4F;</span>
+<span class="nc" id="L11">            CardValue.FIVE -&gt; return 5F;</span>
+<span class="nc" id="L12">            CardValue.SIX -&gt; return 6F;</span>
+<span class="fc" id="L13">            CardValue.SEVEN -&gt; return 7F;</span>
+<span class="nc" id="L14">            CardValue.EIGHT -&gt; return 8F;</span>
+<span class="fc" id="L15">            CardValue.NINE -&gt; return 9F;</span>
+<span class="fc" id="L16">            CardValue.TEN -&gt; return 10F;</span>
+<span class="fc" id="L17">            CardValue.JACK -&gt; return 10F;</span>
+<span class="nc" id="L18">            CardValue.QUEEN -&gt; return 10F;</span>
+<span class="nc" id="L19">            CardValue.KING -&gt; return 10F;</span>
+<span class="fc" id="L20">            CardValue.ACE -&gt; return 11F;</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
