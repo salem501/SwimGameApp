@@ -36,6 +36,6 @@ Gewonnen hat bei Spielende der Spieler mit der höchsten Punktzahl. Bei Punktegl
 ![2](https://user-images.githubusercontent.com/110671574/203846835-842cdea1-e866-460d-bb9d-837a4911aa36.png)
 ![3](https://user-images.githubusercontent.com/110671574/203846841-1ae387f5-9a14-40e5-b8ae-754e1a9054d4.png)
 ![4](https://user-images.githubusercontent.com/110671574/203846854-5dba9746-de13-4c63-9222-90a680a1b4ae.png)
-![5](https://user-images.githubusercontent.com/110671574/203846861-93a02dbb-1924-41e3-b675-f3ef08e2d1eb.png)![6](https://us![7](https://user-images.githubusercontent.com/110671574/203846871-16062b18-2497-493e-8ee8-834779ab0aef.png)
-er-images.githubusercontent.com/110671574/203846863-a41e990f-a5fa-4eab-89db-ff45f0b7af5b.png)
-
+![5](https://user-images.githubusercontent.com/110671574/203846861-93a02dbb-1924-41e3-b675-f3ef08e2d1eb.png)
+![6](https://user-images.githubusercontent.com/110671574/203847019-4179d700-e8a9-496d-95d3-4ca7a29324da.png)
+![7](https://user-images.githubusercontent.com/110671574/203847046-4f47e272-fdfc-45ad-b975-dda0dc1a503e.png)
