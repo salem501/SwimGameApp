@@ -32,3 +32,10 @@ Beginnend beim ersten Spieler sind reihum alle Spieler an der Reihe, bis das Spi
 Das Spiel kann auf zwei Arten beendet werden. Der normale Weg ist, wie zuvor erklärt, dass ein Spieler klopft. Waren danach alle anderen Spieler noch einmal an der Reihe, ist das Spiel beendet. Es kann aber auch passieren, dass wenn alle Spieler gepasst haben, nicht mehr genügend Karten im Nachziehstapel sind, um die Mitte mit drei Karten neu zu bestücken. In diesem Fall endet das Spiel sofort.
 
 Gewonnen hat bei Spielende der Spieler mit der höchsten Punktzahl. Bei Punktegleichstand wird das Spiel als unentschieden gewertet.
+![1](https://user-images.githubusercontent.com/110671574/203846827-cc56e563-461a-4b19-be61-e0d17fa9701f.png)
+![2](https://user-images.githubusercontent.com/110671574/203846835-842cdea1-e866-460d-bb9d-837a4911aa36.png)
+![3](https://user-images.githubusercontent.com/110671574/203846841-1ae387f5-9a14-40e5-b8ae-754e1a9054d4.png)
+![4](https://user-images.githubusercontent.com/110671574/203846854-5dba9746-de13-4c63-9222-90a680a1b4ae.png)
+![5](https://user-images.githubusercontent.com/110671574/203846861-93a02dbb-1924-41e3-b675-f3ef08e2d1eb.png)![6](https://us![7](https://user-images.githubusercontent.com/110671574/203846871-16062b18-2497-493e-8ee8-834779ab0aef.png)
+er-images.githubusercontent.com/110671574/203846863-a41e990f-a5fa-4eab-89db-ff45f0b7af5b.png)
+
