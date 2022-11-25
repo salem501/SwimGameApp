@@ -34,8 +34,10 @@ Das Spiel kann auf zwei Arten beendet werden. Der normale Weg ist, wie zuvor erk
 Gewonnen hat bei Spielende der Spieler mit der höchsten Punktzahl. Bei Punktegleichstand wird das Spiel als unentschieden gewertet.
 
 Um das Spiel auszuprobieren:
+
 1- Die Distibution unter diesem Link herunterladen: https://drive.google.com/file/d/1VZxvvgaMMlkF3rcGSpSAtTe4YsHSbdow/view?usp=share_link
 2- Datei entpacken
+
 3- folgende navigieren: projekt1-1.0\bin\
 4- Die Datei projekt1 ausführen (auf Windows doppelt klicken | auf Linux Terminal öffnen und ./projekt1 eingeben)
 
