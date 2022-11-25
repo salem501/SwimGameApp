@@ -36,9 +36,11 @@ Gewonnen hat bei Spielende der Spieler mit der höchsten Punktzahl. Bei Punktegl
 Um das Spiel auszuprobieren:
 
 1- Die Distibution unter diesem Link herunterladen: https://drive.google.com/file/d/1VZxvvgaMMlkF3rcGSpSAtTe4YsHSbdow/view?usp=share_link
+
 2- Datei entpacken
 
-3- folgende navigieren: projekt1-1.0\bin\
+3- folgendes navigieren: projekt1-1.0\bin\
+
 4- Die Datei projekt1 ausführen (auf Windows doppelt klicken | auf Linux Terminal öffnen und ./projekt1 eingeben)
 
 ![1](https://user-images.githubusercontent.com/110671574/203846827-cc56e563-461a-4b19-be61-e0d17fa9701f.png)
